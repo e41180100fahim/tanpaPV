@@ -7289,9 +7289,9 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #c49b63; }
+  color: white; }
   a:hover, a:active, a:focus {
-    color: #c49b63;
+    color: black;
     outline: none !important;
     text-decoration: none !important; }
 
@@ -7306,7 +7306,7 @@ h1, h2, h3, h4, h5,
   color: #c49b63 !important; }
 
 .ftco-navbar-light {
-  background: transparent !important;
+  background: black !important;
   position: absolute;
   top: 0;
   left: 0;
