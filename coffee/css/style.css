@@ -7283,7 +7283,7 @@ body {
     width: 100%; }
 
 span {
-  color: #bfbfbf; }
+  color: white; }
 
 a {
   -webkit-transition: .3s all ease;
@@ -8136,7 +8136,7 @@ h1, h2, h3, h4, h5,
     .cart-total p.total-price span {
       text-transform: uppercase; }
       .cart-total p.total-price span:last-child {
-        color: #c49b63; }
+        color: white; }
   .cart-total hr {
     background: rgba(255, 255, 255, 0.1); }
 
