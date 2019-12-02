@@ -6,7 +6,7 @@
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:600'><link rel="stylesheet" href="css/login.css">
 
 </head>
-<body>
+<body >
 <!-- partial:index.partial.html -->
 <div class="login-wrap">
 	<div class="login-html">
@@ -36,14 +36,18 @@
 					<a href="#forgot">Lupa Kata Sandi?</a>
 				</div>
 			</div>
+			</form>
+
 			<div class="sign-up-htm">
+
+				<form action="input-aksi.php" method="post">
 				<div class="group">
 					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
+					<input id="user" type="text" class="input" name="nama">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Kata Sandi</label>
-					<input id="pass" type="password" class="input" data-type="password">
+					<input id="pass" type="password" class="input" data-type="password" name="katasandi">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Ulang Kata Sandi</label>
@@ -51,7 +55,7 @@
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Email</label>
-					<input id="pass" type="text" class="input">
+					<input id="pass" type="text" class="input" name="email">
 				</div>
 				<div class="group">
 					<input type="submit" class="button" value="Masuk">
@@ -59,6 +63,8 @@
 				<div class="hr"></div>
 				<div class="foot-lnk">
 					<label for="tab-1">Udah Punya Akun?</a>
+				
+					</form>
 				</div>
 			</div>
 		</div>

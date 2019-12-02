@@ -1,3 +1,7 @@
+<?php
+session_start();
+include "koneksi.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,12 +26,16 @@
 
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
-
+                <?php
+                $result1 = mysqli_query($koneksi, "SELECT * FROM customer WHERE Username='".$_SESSION['username']."'");
+                $row = mysqli_fetch_array($result1);
+                ?>
     
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
+  
   <body>
 	  <!--HOME-->
 	  <!--NAV-->
@@ -54,16 +62,24 @@
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/akun.png" alt="" style="width: 22px; height: 22px;"></a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="login.php">Daftar</a> 
-                <a class="dropdown-item" href="login.php">Masuk</a>
-              </div>
+                <?php
+                if ($row!=""){
+                  echo '<a class="dropdown-item" href="#"> '.$row['Username'].'</a>';
+                  echo '<a class="dropdown-item" href="logout.php">Log out</a>';
+                } 
+                
+                else  { echo '<a class="dropdown-item" href="login.php">Daftar</a>' ;
+                echo '<a class="dropdown-item" href="login.php">Masuk</a>';
+                }
+                ?>
+                </div>
             </li>
 	        </ul>
 	      </div>
 		  </div>
 	  </nav>
     <!-- END nav -->
-
+  
     <section class="home-slider owl-carousel">
       <div class="slider-item" style="background-image: url(images/bg_1.jpg);">
       	<div class="overlay"></div>
@@ -87,7 +103,8 @@
 	          <h2 class="mb-4">Our Story</h2>
 	        </div>
 	        <div>
-	  				<p>Ning Puri berdiri sejak tahun 2017 memproduksi hasil kebun sendiri menjadi produk olahan sirup markisa yang terkenal mengandung vit. C tinggi, menyehatkan tanpa bahan pengawet, tanpa pemanis buatan, tanpa pewarna tambahan,  ekonomis dengan harga terjangkau, dan baik di konsumsi untuk semua kalangan mulai dari anak-anak, orang tua dan ibu hamil.</p>
+            <p>Ning Puri berdiri sejak tahun 2017 memproduksi hasil kebun sendiri menjadi produk olahan sirup markisa yang terkenal mengandung vit. C tinggi, menyehatkan tanpa bahan pengawet, tanpa pemanis buatan, tanpa pewarna tambahan,  ekonomis dengan harga terjangkau, dan baik di konsumsi untuk semua kalangan mulai dari anak-anak, orang tua dan ibu hamil.</p>
+            <form action="Panggilan_nama.php" method=""></form>
 	  			</div>
   			</div>
     	</div>
