@@ -38,7 +38,6 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item"><a href="index.php" class="nav-link">Beranda</a></li>
-	          <li class="nav-item"><a href="about.php" class="nav-link">Tentang</a></li>
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produk</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -47,7 +46,6 @@
                 <a class="dropdown-item" href="checkout.php">Pembayaran</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="contact.php" class="nav-link">Kontak</a></li>
 			  <li class="nav-item cart"><a href="cart.php" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
 			  <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/akun.png" alt="" style="width: 22px; height: 22px;"></a>
@@ -62,24 +60,18 @@
 	  </nav>
     <!-- END nav -->
 
-    <section class="home-slider owl-carousel">
-
-      <div class="slider-item" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
-      	<div class="overlay"></div>
-        <div class="container">
-          <div class="row slider-text justify-content-center align-items-center">
-
-            <div class="col-md-7 col-sm-12 text-center ftco-animate">
-            	<h1 class="mb-3 mt-5 bread">Cart</h1>
-	            <p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Cart</span></p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="ftco-menu mb-5 pb-5">
+			<div class="container">
+				<div class="row d-md-flex">
+					<div class="col-lg-12 ftco-animate p-md-5">
+						<div class="row">
+					  <div class="col-md-12 nav-link-wrap mb-5">
+						<div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+							<h1>Keranjang</h1>
+						</div>
+					  </div>
+					  <div class="col-md-12 d-flex align-items-center">
 		
-		<section class="ftco-section ftco-cart">
 			<div class="container">
 				<div class="row">
     			<div class="col-md-12 ftco-animate">
@@ -128,7 +120,7 @@
 						        </td>
 						        
 						        <td class="price">$15.70</td>
-						        
+								
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
 					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">

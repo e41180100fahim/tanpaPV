@@ -38,7 +38,6 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item"><a href="index.php" class="nav-link">Beranda</a></li>
-	          <li class="nav-item"><a href="about.php" class="nav-link">Tentang</a></li>
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produk</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -47,7 +46,6 @@
                 <a class="dropdown-item" href="checkout.php">Pembayaran</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="contact.php" class="nav-link">Kontak</a></li>
 			  <li class="nav-item cart"><a href="cart.php" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
 			  <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/akun.png" alt="" style="width: 22px; height: 22px;"></a>
@@ -62,27 +60,21 @@
 	  </nav>
     <!-- END nav -->
 
-    <section class="home-slider owl-carousel">
-
-      <div class="slider-item" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
-      	<div class="overlay"></div>
-        <div class="container">
-          <div class="row slider-text justify-content-center align-items-center">
-
-            <div class="col-md-7 col-sm-12 text-center ftco-animate">
-            	<h1 class="mb-3 mt-5 bread">Checkout</h1>
-	            <p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Checout</span></p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-8 ftco-animate">
+    <section class="ftco-menu mb-5 pb-5">
+			<div class="container">
+				<div class="row d-md-flex">
+					<div class="col-lg-12 ftco-animate p-md-5">
+						<div class="row">
+					  <div class="col-md-12 nav-link-wrap mb-5">
+						<div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+							<h1>Produk</h1>
+						</div>
+					  </div>
+					  <div class="col-md-12 d-flex align-items-center">
+		
+    	<div class="container">
+        	<div class="row">
+				<div class="col-lg-12 ftco-animate p-md-5">
 						<form action="#" class="billing-form ftco-bg-dark p-3 p-md-5">
 							<h3 class="mb-4 billing-heading">Billing Details</h3>
 	          	<div class="row align-items-end">
@@ -226,44 +218,6 @@
 	          	</div>
 	          </div>
           </div> <!-- .col-md-8 -->
-
-
-
-
-          <div class="col-xl-4 sidebar ftco-animate">
-            <div class="sidebar-box">
-              <form action="#" class="search-form">
-                <div class="form-group">
-                	<div class="icon">
-	                  <span class="icon-search"></span>
-                  </div>
-                  <input type="text" class="form-control" placeholder="Search...">
-                </div>
-              </form>
-            </div>
-            <div class="sidebar-box ftco-animate">
-              <div class="categories">
-                <h3>Categories</h3>
-                <li><a href="#">Tour <span>(12)</span></a></li>
-                <li><a href="#">Hotel <span>(22)</span></a></li>
-                <li><a href="#">Coffee <span>(37)</span></a></li>
-                <li><a href="#">Drinks <span>(42)</span></a></li>
-                <li><a href="#">Foods <span>(14)</span></a></li>
-                <li><a href="#">Travel <span>(140)</span></a></li>
-              </div>
-            </div>
-
-         
-         
-
-            <div class="sidebar-box ftco-animate">
-              <h3>Paragraph</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
     </section> <!-- .section -->
 
     <footer class="ftco-footer ftco-section img">

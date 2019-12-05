@@ -1,3 +1,11 @@
+<?php
+include 'koneksi.php';
+session_start();
+
+$result1 = mysqli_query($koneksi, "SELECT * FROM customer WHERE Username='".$_SESSION['username']."'");
+$row = mysqli_fetch_array($result1);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,6 +35,7 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
   </head>
   <body>
 	  <!--HOME-->
@@ -40,7 +49,6 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="index.php" class="nav-link">Beranda</a></li>
-	          <li class="nav-item"><a href="about.php" class="nav-link">Tentang</a></li>
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produk</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -49,14 +57,23 @@
                 <a class="dropdown-item" href="checkout.php">Pembayaran</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="contact.php" class="nav-link">Kontak</a></li>
             <li class="nav-item cart"><a href="cart.php" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/akun.png" alt="" style="width: 22px; height: 22px;"></a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="login.php">Daftar</a> 
-                <a class="dropdown-item" href="login.php">Masuk</a>
-              </div>
+
+              <?php
+                if ($row!="") {
+                  echo '<a class="dropdown-item" href="#"> '.$row['Username'].'</a>';
+                  echo '<a class="dropdown-item" href="#">Logout</a>';
+                }
+
+                else {
+                  echo '<a class="dropdown-item" href="signup_form.php">Daftar</a>';
+                  echo '<a class="dropdown-item" href="signin_form.php">Masuk</a>';
+                }
+                ?>
+                 </div>
             </li>
 	        </ul>
 	      </div>
@@ -65,13 +82,11 @@
     <!-- END nav -->
 
     <section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image: url(images/bg_1.jpg);">
+      <div class="slider-item" style="background-image: url(images/label.jpg);">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
-            <div class="col-md-8 col-sm-12 text-center ftco-animate">
-            </div>
-
+            <div class="col-md-8 col-sm-12 text-center ftco-animate"></div>
           </div>
         </div>
       </div>
@@ -94,7 +109,7 @@
 	</section>
 
   <!--Testimoni-->
-  <section class="ftco-section img" id="ftco-testimony" style="background-image: url(images/bg_1.jpg);"  data-stellar-background-ratio="0.5">
+  <section class="ftco-section img" id="ftco-testimony" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
       <div class="row justify-content-center mb-5">
