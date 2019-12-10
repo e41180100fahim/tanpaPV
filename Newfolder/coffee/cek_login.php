@@ -25,7 +25,7 @@ else if ($cek1 > 0){
     $_SESSION['username'] = $username;
     $_SESSION['status'] = 'login';
 
-    header("location:penambahan-stok.php");
+    header("location:index.php");
 }
 
 else if($username==null || $password==null){
