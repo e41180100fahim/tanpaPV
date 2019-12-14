@@ -19,6 +19,7 @@ $row2 = mysqli_fetch_array($result2);
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
     
@@ -38,6 +39,7 @@ $row2 = mysqli_fetch_array($result2);
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/goblok.css">
   </head>
   <body>
 	  <!--HOME-->
@@ -56,11 +58,11 @@ $row2 = mysqli_fetch_array($result2);
               <div class="dropdown-menu" aria-labelledby="dropdown04">
                 <a class="dropdown-item" href="shop.php">Produk</a>
                 
-                <?php
+                <?php            
 
                 if ($row2!="") {
-                  echo '<a class="dropdown-item" href="cart.php">Tambah Produk</a>';
-                  echo '<a class="dropdown-item" href="checkout.php">Penambahan Stok</a>';
+                  echo '<a class="dropdown-item" href="#">Tambah Produk</a>';
+                  echo '<a class="dropdown-item" href="penambahanstok.php">Penambahan Stok</a>';
                 }
 
                 else {
@@ -72,7 +74,21 @@ $row2 = mysqli_fetch_array($result2);
 
               </div>
             </li>
-            <li class="nav-item cart"><a href="cart.php" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
+
+            <?php
+
+            if ($row!="") {
+              echo '<li class="nav-item cart"><a href="cart.php" class="nav-link"><span class="icon icon-shopping_cart"></span><!--<span class="bag d-flex justify-content-center align-items-center"><small>1</small></span>--></a></li>';
+            
+            }
+
+            else {
+              echo '<li class="nav-item"><a href="index.php" class="nav-link">Pesanan</a></li>';
+              echo '<li class="nav-item"><a href="index.php" class="nav-link">Laporan</a></li>';
+            }
+            
+            ?>
+            
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/akun.png" alt="" style="width: 22px; height: 22px;"></a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -80,13 +96,16 @@ $row2 = mysqli_fetch_array($result2);
                 <?php
 
                 if ($row!="") {
-                  echo '<a class="dropdown-item" href="#">'.$row['Username'].'</a>';
-                  echo '<a class="dropdown-item" href="logout.php">Logout</a>';
+                  echo '<a class="dropdown-item" href="profil.php">Profil</a>';
+                  echo '<a class="dropdown-item" href="testlogout.php">Logout</a>';
+                  echo '<li  class="nav-item"><a href="profil.php" class="nav-link">  Hello '.$row['Username'].'</a></li>';
                 }
 
                 elseif ($row2!="") {
-                  echo '<a class="dropdown-item" href="#"> '.$row2['Username'].'</a>';
+                  echo '<a class="dropdown-item" href="profil.php"> Profil</a>';
                   echo '<a class="dropdown-item" href="logout.php">Logout</a>';
+                  echo '<li class="nav-item"><a href="profil.php" class="nav-link"> Hello '.$row2['Username'].'</a></li>';
+                  
                 }
 
                 else {
@@ -94,6 +113,7 @@ $row2 = mysqli_fetch_array($result2);
                   echo '<a class="dropdown-item" href="masuk.php">Masuk</a>';
                 }
                 ?>
+
 
               </div>
             </li>
@@ -250,6 +270,9 @@ $row2 = mysqli_fetch_array($result2);
       </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>

@@ -81,6 +81,17 @@ p {
   margin-top: 0;
   margin-bottom: 1rem; }
 
+  .tombol {
+    padding: 20px 30px;
+    background: orangered;
+    display: table;
+    transition: .3s ease-in;
+  }
+
+  .tombol:hover {
+   background: var(--orange);
+  }
+
 abbr[title],
 abbr[data-original-title] {
   text-decoration: underline;
@@ -354,7 +365,7 @@ hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  border-top: 1px solid white; }
 
 small,
 .small {
@@ -7962,8 +7973,9 @@ h1, h2, h3, h4, h5,
 .cart-total {
   width: 100%;
   display: block;
-  border: 1px solid black;
-  padding: 20px; }
+  border: 1px solid white;
+  padding: 20px;
+  background: #191919; }
   .cart-total h3 {
     font-size: 20px;
     text-transform: uppercase; }
@@ -8254,14 +8266,14 @@ h1, h2, h3, h4, h5,
 .form-control {
   height: 58px !important;
   background: transparent !important;
-  color: black !important;
+  color: white !important;
   font-size: 24px;
   font-display: bold;
   text-align: center;
   border-radius: 0px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  border:  2px solid black !important;
+  border:  2px solid white !important;
   padding-right: 0;
   padding-left: 0; }
   .form-control:focus, .form-control:active {
@@ -9126,4 +9138,6 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+   
 

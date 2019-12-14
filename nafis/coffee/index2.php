@@ -49,13 +49,13 @@
                 <a class="dropdown-item" href="checkout.php">Pembayaran</a>
               </div>
             </li>
-            <li class="nav-item cart"><a href="cart.php" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
+            <li class="nav-item cart"><a href="cart.php" class="nav-link"><span class="icon icon-shopping_cart"></span><!--<span class="bag d-flex justify-content-center align-items-center"><small>1</small></span>--></a></li>
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/akun.png" alt="" style="width: 22px; height: 22px;"></a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               <a class="dropdown-item" href="Daftar.php">Daftar</a>
                 <a class="dropdown-item" href="Masuk.php">Masuk</a>
-                <li style="border: 2px solid white;" class="nav-item"><a href="index.php" class="nav-link"> Hello Beranda</a></li>
+                
 
               </div>
             </li>

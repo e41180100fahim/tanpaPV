@@ -8,7 +8,6 @@ $row = mysqli_fetch_array($result1);
 $result2 = mysqli_query($koneksi, "SELECT * FROM admin WHERE Username='".$_SESSION['username']."'");
 $row2 = mysqli_fetch_array($result2);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,11 +53,11 @@ $row2 = mysqli_fetch_array($result2);
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="shop.php">Produk</a>
 			   
-				  <?php
+				<?php            
 
                 if ($row2!="") {
-                  echo '<a class="dropdown-item" href="cart.php">Tambah Produk</a>';
-                  echo '<a class="dropdown-item" href="checkout.php">Penambahan Stok</a>';
+                  echo '<a class="dropdown-item" href="#">Tambah Produk</a>';
+                  echo '<a class="dropdown-item" href="penambahanstok.php">Penambahan Stok</a>';
                 }
 
                 else {
@@ -66,32 +65,50 @@ $row2 = mysqli_fetch_array($result2);
                   echo '<a class="dropdown-item" href="checkout.php">Pembayaran</a>';
                 }
 
-				?>
+                ?>
 				
               </div>
-            </li>
-			  <li class="nav-item cart"><a href="cart.php" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
-			  <li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/akun.png" alt="" style="width: 22px; height: 22px;"></a>
-				<div class="dropdown-menu" aria-labelledby="dropdown04">
+			</li>
+			
+			<?php
+
+            if ($row!="") {
+              echo '<li class="nav-item cart"><a href="cart.php" class="nav-link"><span class="icon icon-shopping_cart"></span><!--<span class="bag d-flex justify-content-center align-items-center"><small>1</small></span>--></a></li>';
+            
+            }
+
+            else {
+              echo '<li class="nav-item"><a href="index.php" class="nav-link">Pesanan</a></li>';
+              echo '<li class="nav-item"><a href="index.php" class="nav-link">Laporan</a></li>';
+			}
+			
+            ?>
+            
+			
+			<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/akun.png" alt="" style="width: 22px; height: 22px;"></a>
+			<div class="dropdown-menu" aria-labelledby="dropdown04">
 					
-				<?php
+			<?php
 
-if ($row!="") {
-  echo '<a class="dropdown-item" href="#">'.$row['Username'].'</a>';
-  echo '<a class="dropdown-item" href="logout.php">Logout</a>';
-}
+			if ($row!="") {
+			echo '<a class="dropdown-item" href="profil.php">Profil</a>';
+			echo '<a class="dropdown-item" href="logout.php">Logout</a>';
+			echo '<li  class="nav-item"><a href="profil.php" class="nav-link">  Hello '.$row['Username'].'</a></li>';
+			}
 
-elseif ($row2!="") {
-  echo '<a class="dropdown-item" href="#"> '.$row2['Username'].'</a>';
-  echo '<a class="dropdown-item" href="logout.php">Logout</a>';
-}
+			elseif ($row2!="") {
+			echo '<a class="dropdown-item" href="profil.php"> Profil</a>';
+			echo '<a class="dropdown-item" href="logout.php">Logout</a>';
+			echo '<li class="nav-item"><a href="profil.php" class="nav-link"> Hello '.$row2['Username'].'</a></li>';
+			
+			}
 
-else {
-  echo '<a class="dropdown-item" href="daftar.php">Daftar</a>';
-  echo '<a class="dropdown-item" href="masuk.php">Masuk</a>';
-}
-?>
+			else {
+			echo '<a class="dropdown-item" href="daftar.php">Daftar</a>';
+			echo '<a class="dropdown-item" href="masuk.php">Masuk</a>';
+			}
+			?>
 
 				</div>
 			  </li>

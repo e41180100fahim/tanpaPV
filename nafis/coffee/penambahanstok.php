@@ -1,3 +1,14 @@
+<?php
+include 'koneksi.php';
+session_start();
+
+$result1 = mysqli_query($koneksi, "SELECT * FROM customer WHERE Username='".$_SESSION['username']."'");
+$row = mysqli_fetch_array($result1);
+
+$result2 = mysqli_query($koneksi, "SELECT * FROM admin WHERE Username='".$_SESSION['username']."'");
+$row2 = mysqli_fetch_array($result2);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,42 +37,116 @@
     
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<style>
+
+	.tombol {
+		padding: 5px 10px;
+		background: black;
+		transition: .3s ease-in;
+		color: white;
+	  }
+	
+	  .tombol:hover {
+	   background: whitesmoke;
+	   color: black;
+	  }
+
+	  .tombol1 {
+		padding: 10px 35px;
+		background: black;
+		transition: .3s ease-in;
+		color: white;
+		border: 1px solid white;
+	  }
+	
+	  .tombol1:hover {
+	   background: #191919;
+	   color: white;
+	  }
+	</style>
+
   </head>
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Ning<small>Puri</small></a>
+	      <a class="navbar-brand" href="index.php">Ning<small>Puri</small></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.html" class="nav-link">Beranda</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">Tentang</a></li>
+	          <li class="nav-item"><a href="index.php" class="nav-link">Beranda</a></li>
 	          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produk</a>
+              <a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produk</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop.html">Produk</a>
-                <a class="dropdown-item" href="cart.html">Keranjang</a>
-                <a class="dropdown-item" href="checkout.html">Pembayaran</a>
+				  <a class="dropdown-item" href="shop.php">Produk</a>
+				  
+				<?php            
+
+				if ($row2!="") {
+				echo '<a class="dropdown-item" href="#">Tambah Produk</a>';
+				echo '<a class="dropdown-item" href="penambahanstok.php">Penambahan Stok</a>';
+				}
+
+				else {
+				echo '<a class="dropdown-item" href="cart.php">Keranjang</a>';
+				echo '<a class="dropdown-item" href="checkout.php">Pembayaran</a>';
+				}
+
+				?>
+
               </div>
-            </li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Kontak</a></li>
-			  <li class="nav-item cart"><a href="cart.html" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
+			</li>
+			
+				<?php
+
+				if ($row!="") {
+				echo '<li class="nav-item cart"><a href="cart.php" class="nav-link"><span class="icon icon-shopping_cart"></span><!--<span class="bag d-flex justify-content-center align-items-center"><small>1</small></span>--></a></li>';
+
+				}
+
+				else {
+				echo '<li class="nav-item"><a href="index.php" class="nav-link">Pesanan</a></li>';
+				echo '<li class="nav-item"><a href="index.php" class="nav-link">Laporan</a></li>';
+				}
+
+				?>
+
 			  <li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="shop.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/akun.png" alt="" style="width: 22px; height: 22px;"></a>
+				<a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/akun.png" alt="" style="width: 22px; height: 22px;"></a>
 				<div class="dropdown-menu" aria-labelledby="dropdown04">
-					<a class="dropdown-item" href="login.html">Daftar</a>
-				  <a class="dropdown-item" href="login.html">Masuk</a>
+
+				<?php
+
+				if ($row!="") {
+				echo '<a class="dropdown-item" href="profil.php">Profil</a>';
+				echo '<a class="dropdown-item" href="logout.php">Logout</a>';
+				echo '<li  class="nav-item"><a href="profil.php" class="nav-link">  Hello '.$row['Username'].'</a></li>';
+				}
+
+				elseif ($row2!="") {
+				echo '<a class="dropdown-item" href="profil.php"> Profil</a>';
+				echo '<a class="dropdown-item" href="logout.php">Logout</a>';
+				echo '<li class="nav-item"><a href="profil.php" class="nav-link"> Hello '.$row2['Username'].'</a></li>';
+				
+				}
+
+				else {
+				echo '<a class="dropdown-item" href="daftar.php">Daftar</a>';
+				echo '<a class="dropdown-item" href="masuk.php">Masuk</a>';
+				}
+				?>
 				</div>
 			  </li>
 	        </ul>
 	      </div>
 		  </div>
 	  </nav>
-	<!-- END nav -->
-	<section class="ftco-menu mb-5 pb-5">
+    <!-- END nav -->
+
+    <section class="ftco-menu mb-5 pb-5">
 			<div class="container">
 				<div class="row d-md-flex">
 					<div class="col-lg-12 ftco-animate p-md-5">
@@ -72,7 +157,7 @@
 						</div>
 					  </div>
 					  <div class="col-md-12 d-flex align-items-center">
-
+		
 			<div class="container">
 				<div class="row">
     			<div class="col-md-12 ftco-animate">
@@ -83,14 +168,15 @@
 						        <th>&nbsp;</th>
 						        <th>Produk</th>
 						        <th>Nama Produk</th>
-						        <th>Harga</th>
-						        <th>Qty</th>
-						        <th>Subtotal</th>
+						        <th>Stok</th>
+						        <th>&nbsp;</th>
+						        <th>&nbsp;</th>
 						      </tr>
 						    </thead>
 						    <tbody style="background-color: #191919;">
 						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="icon-close"></span></a></td>
+							  <td></td>
+						        
 						        
 						        <td class="image-prod"><div class="img" style="background-image:url(images/menu-2.jpg);"></div></td>
 						        
@@ -99,19 +185,19 @@
 						        	<p>Far far away, behind the word mountains, far from the countries</p>
 						        </td>
 						        
-						        <td class="price">$4.90</td>
 						        
 						        <td class="quantity">
-						        	<div  class="input-group mb-3">
-					             	<input  type="text" name="quantity" class="quantity form-control input-number"  value="1" min="1" max="100">
+						        	<div class="input-group mb-3">
+					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
 					          	</div>
 					          </td>
 						        
-						        <td class="total">$4.90</td>
+								<td><button class="tombol">Tambah</button></td>
+								<td></td>
 						      </tr><!-- END TR-->
 
 						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="icon-close"></span></a></td>
+						        <td></td>
 						        
 						        <td class="image-prod"><div class="img" style="background-image:url(images/dish-2.jpg);"></div></td>
 						        
@@ -120,15 +206,15 @@
 						        	<p>Far far away, behind the word mountains, far from the countries</p>
 						        </td>
 						        
-						        <td class="price">$15.70</td>
-						        
+						        								
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
 					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
 					          	</div>
 					          </td>
 						        
-						        <td class="total">$15.70</td>
+							  <td><button class="tombol">Tambah</button></td>
+							  <td></td>
 						      </tr><!-- END TR-->
 						    </tbody>
 						  </table>
@@ -157,7 +243,7 @@
     						<span>$17.60</span>
     					</p>
     				</div>
-    				<p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+    				<p class="text-center"><a href="checkout.html" class="tombol1">Proceed to Checkout</a></p>
     			</div>
     		</div>
 			</div>
