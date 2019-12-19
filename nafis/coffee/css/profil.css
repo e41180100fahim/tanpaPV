@@ -1,6 +1,7 @@
 body{
 background:#f9f9fb;    
 }
+
 .view-account{
 background:#FFFFFF; 
 margin-top:20px;
@@ -557,7 +558,7 @@ color: #a2a6af
     padding-left: 30px
 }
 .view-account .side-bar .side-menu .nav>li>a:hover {
-    background: #f9f9fb
+    background: #f9f9fb;
 }
 .view-account .side-bar .side-menu .nav>li.active a {
     background: #f9f9fb;

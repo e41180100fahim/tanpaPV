@@ -1,3 +1,14 @@
+<?php
+include 'koneksi.php';
+session_start();
+
+$result1 = mysqli_query($koneksi, "SELECT customer.ID_Customer,customer.Username,customer.Nama,customer.Email,customer.Alamat,customer.No_Telepon,member.Member FROM customer INNER JOIN member on member.ID_Customer=customer.ID_Customer WHERE Username='".$_SESSION['username']."'");
+$row = mysqli_fetch_array($result1);
+if(!$result1){
+    printf(mysqli_error($koneksi));
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,66 +20,87 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/profil.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
 </head>
-<body>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container">
-    <div class="view-account">
+<body style="background-image: url(images/bg_4.jpg);">
+<div  class="container">
+    <div style="background: #191919;" class="view-account">
         <section class="module">
             <div class="module-inner">
                 <div class="side-bar">
                     <div class="user-info">
                         <img class="img-profile img-circle img-responsive center-block" src="images/passionfruit.jpg" alt="">
                         <ul class="meta list list-unstyled">
-                            <li class="name"><b>Rebecca Sanders</b></li>
-                            <li class="email"><a href="#">Rebecca.S@website.com</a></li>
+                        <?php
+
+                        if ($row!="") {
+                        echo '<li style="color: white;" class="name"><b>'.$row['Username'].'</b></li>';
+                        echo '<li style="color: white;" class="name"><p>'.$row['Email'].'</p></li>';
+                        }
+
+                    
+
+                        ?>
+
+                           
+                           
                         </ul>
                     </div>
             		<nav class="side-menu">
         				<ul class="nav">
-        					<li class=""><a href="#"><span class=""></span> Beranda</a></li>
+        					<li class=""><a href="index.php"><span class=""></span> Beranda</a></li>
         					<li class="active"><a href="#"><span class=""></span> Profil</a></li>
-        					<li><a href="#"><span class=""></span> Kata Sandi</a></li>
+        					<li><a href="password.php"><span class=""></span> Kata Sandi</a></li>
         				</ul>
         			</nav>
                 </div>
                 <div class="content-panel">
-                    <h2 class="title">Profil<span " class="pro-label label label-warning">GOLD</span></h2>
-                    <form class="form-horizontal">
+                    <h2 class="title" style="color: white;">Profil<span " class="pro-label label label-warning"><?php echo ''.$row['Member'].'' ?></span></h2>
+                   
                         <fieldset class="fieldset">
-                            <h3 class="fieldset-title">Biodata</h3>
+                        <?php 
+                            if(isset($_GET['pesan'])){
+                                if($_GET['pesan'] == "update"){
+                                    echo 'Sudah di Update';
+                                }
+                            }
+                        ?>
+                            <h3 class="fieldset-title" style="color: white;">Biodata</h3>
+                           
+                            <form action="update_User.php" method="post">
                             <div class="form-group">
-                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Username</label>
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label" style="color: white;" >Username</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="text" class="form-control" value="Rebecca">
+                                    <input type="text" name="username" class="form-control" <?php echo 'value="'.$row['Username'].'"' ?> >
                                 </div>
                             </div>
         
                             <div class="form-group">
-                                <label class="col-md-2 col-sm-3 col-xs-12 control-label">Nama</label>
+                                <label class="col-md-2 col-sm-3 col-xs-12 control-label" style="color: white;">Nama</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="text" class="form-control" value="Rebecca">
+                                    <input type="text" name="nama" class="form-control" <?php echo 'value="'.$row['Nama'].'"'  ?>>
                                 </div>
                             </div>
                         </fieldset>
                         <fieldset class="fieldset">
-                            <h3 class="fieldset-title">Informasi Kontak</h3>
+                            <h3 class="fieldset-title" style="color: white;">Informasi Kontak</h3>
                             <div class="form-group">
-                                <label class="col-md-2  col-sm-3 col-xs-12 control-label">Email</label>
+                                <label class="col-md-2  col-sm-3 col-xs-12 control-label" style="color: white;">Email</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="email" class="form-control" value="Rebecca@website.com">
+                                    <input type="email" name="email" class="form-control" <?php echo 'value="'.$row['Email'].'"'  ?>>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2  col-sm-3 col-xs-12 control-label">Alamat</label>
+                                <label class="col-md-2  col-sm-3 col-xs-12 control-label" style="color: white;">Alamat</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="text" class="form-control" value="SpeedyBecky">
+                                    <input type="text" name="alamat" class="form-control"<?php echo 'value="'.$row['Alamat'].'"'  ?>>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2  col-sm-3 col-xs-12 control-label">No Telp</label>
+                                <label class="col-md-2  col-sm-3 col-xs-12 control-label" style="color: white;">No Telp</label>
                                 <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <input type="url" class="form-control" value="https://www.linkedin.com/in/lorem">
+                                    <input type="text" name="no_telp" onkeypress="return hanyaAngka(event)" maxlength="14" class="form-control" <?php echo 'value="'.$row['No_Telepon'].'"' ?>>
                                 </div>
                             </div>
                         </fieldset>
@@ -78,6 +110,7 @@
                                 <input class="btn btn-primary" type="submit" value="Update Profile">
                             </div>
                         </div>
+                        </form>
                     </form>
                 </div>
             </div>
@@ -86,8 +119,18 @@
 </div>
 
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript">
+<script type="text/javascript"></script>
+
+<script>
+		function hanyaAngka(evt) {
+		  var charCode = (evt.which) ? evt.which : event.keyCode
+		   if (charCode > 31 && (charCode < 48 || charCode > 57))
+ 
+		    return false;
+		  return true;
+		}
+	</script>
 	
-</script>
+
 </body>
 </html>
