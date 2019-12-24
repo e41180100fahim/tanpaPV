@@ -135,7 +135,7 @@ $row2 = mysqli_fetch_array($result2);
 		              			<div class="menu-wrap">
 		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-1.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="product-single.html">Grilled Beef</a></h3>
+		              					<h3><a href="product-single.html">Sirup Markisa Netto 500ml</a></h3>
 		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
 		              					<p class="price"><span>$2.90</span></p>
 		              					<p><a href="cart.html" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
