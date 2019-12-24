@@ -8,7 +8,6 @@ $row = mysqli_fetch_array($result1);
 $result2 = mysqli_query($koneksi, "SELECT * FROM admin WHERE Username='".$_SESSION['username']."'");
 $row2 = mysqli_fetch_array($result2);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,11 +53,11 @@ $row2 = mysqli_fetch_array($result2);
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="shop.php">Produk</a>
 			   
-				  <?php
+				<?php            
 
                 if ($row2!="") {
-                  echo '<a class="dropdown-item" href="cart.php">Tambah Produk</a>';
-                  echo '<a class="dropdown-item" href="checkout.php">Penambahan Stok</a>';
+                  echo '<a class="dropdown-item" href="#">Tambah Produk</a>';
+                  echo '<a class="dropdown-item" href="penambahanstok.php">Penambahan Stok</a>';
                 }
 
                 else {
@@ -66,32 +65,50 @@ $row2 = mysqli_fetch_array($result2);
                   echo '<a class="dropdown-item" href="checkout.php">Pembayaran</a>';
                 }
 
-				?>
+                ?>
 				
               </div>
-            </li>
-			  <li class="nav-item cart"><a href="cart.php" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
-			  <li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/akun.png" alt="" style="width: 22px; height: 22px;"></a>
-				<div class="dropdown-menu" aria-labelledby="dropdown04">
+			</li>
+			
+			<?php
+
+            if ($row!="") {
+              echo '<li class="nav-item cart"><a href="cart.php" class="nav-link"><span class="icon icon-shopping_cart"></span><!--<span class="bag d-flex justify-content-center align-items-center"><small>1</small></span>--></a></li>';
+            
+            }
+
+            else {
+              echo '<li class="nav-item"><a href="index.php" class="nav-link">Pesanan</a></li>';
+              echo '<li class="nav-item"><a href="index.php" class="nav-link">Laporan</a></li>';
+			}
+			
+            ?>
+            
+			
+			<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="shop.php" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/akun.png" alt="" style="width: 22px; height: 22px;"></a>
+			<div class="dropdown-menu" aria-labelledby="dropdown04">
 					
-				<?php
+			<?php
 
-if ($row!="") {
-  echo '<a class="dropdown-item" href="#">'.$row['Username'].'</a>';
-  echo '<a class="dropdown-item" href="logout.php">Logout</a>';
-}
+			if ($row!="") {
+			echo '<a class="dropdown-item" href="profil.php">Profil</a>';
+			echo '<a class="dropdown-item" href="logout.php">Logout</a>';
+			echo '<li  class="nav-item"><a href="profil.php" class="nav-link">  Hello '.$row['Username'].'</a></li>';
+			}
 
-elseif ($row2!="") {
-  echo '<a class="dropdown-item" href="#"> '.$row2['Username'].'</a>';
-  echo '<a class="dropdown-item" href="logout.php">Logout</a>';
-}
+			elseif ($row2!="") {
+			echo '<a class="dropdown-item" href="profil.php"> Profil</a>';
+			echo '<a class="dropdown-item" href="logout.php">Logout</a>';
+			echo '<li class="nav-item"><a href="profil.php" class="nav-link"> Hello '.$row2['Username'].'</a></li>';
+			
+			}
 
-else {
-  echo '<a class="dropdown-item" href="daftar.php">Daftar</a>';
-  echo '<a class="dropdown-item" href="masuk.php">Masuk</a>';
-}
-?>
+			else {
+			echo '<a class="dropdown-item" href="daftar.php">Daftar</a>';
+			echo '<a class="dropdown-item" href="masuk.php">Masuk</a>';
+			}
+			?>
 
 				</div>
 			  </li>
@@ -118,7 +135,7 @@ else {
 		              			<div class="menu-wrap">
 		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-1.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="product-single.html">Grilled Beef</a></h3>
+		              					<h3><a href="product-single.html">Sirup Markisa Netto 500ml</a></h3>
 		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
 		              					<p class="price"><span>$2.90</span></p>
 		              					<p><a href="cart.html" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
@@ -188,44 +205,11 @@ else {
 		      </div>
 		    </div>
     	</div>
-    </section>
-
-    <footer class="ftco-footer ftco-section img">
-    	<div class="overlay"></div>
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-lg-5 col-md-6 mb-5 mb-md-5">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Tentang Ning Puri</h2>
-              <p>Ning Puri berdiri sejak tahun 2017 memproduksi hasil kebun sendiri menjadi produk olahan sirup markisa yang terkenal mengandung vit. C tinggi, menyehatkan tanpa bahan pengawet, tanpa pemanis buatan, tanpa pewarna tambahan,  ekonomis dengan harga terjangkau, dan baik di konsumsi untuk semua kalangan mulai dari anak-anak, orang tua dan ibu hamil.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-         
-        
-		  <div style="padding-left: 100px;">
-			<div class="col-lg-10 col-md-6 mb-5 mb-md-5">
-			  <div class="ftco-footer-widget mb-4">
-				  <h2 class="ftco-heading-2">Kontak Kami</h2>
-				  <div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-       
-      </div>
-    </footer>
-    
-  
+	</section>
+	
+	<?php
+  	require_once "footer.html";
+  	?>
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
