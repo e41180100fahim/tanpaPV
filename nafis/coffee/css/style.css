@@ -7670,7 +7670,7 @@ h1, h2, h3, h4, h5,
         height: 300px; } }
   @media (min-width: 768px) {
     .ftco-about .one-half .overlap {
-      margin-left: -150px;
+      margin-left: -250px;
       padding: 40px;
       background: rgba(0, 0, 0, 0.5); } }
 
@@ -8029,7 +8029,7 @@ h1, h2, h3, h4, h5,
   height: 58px !important;
   padding-left: 15px;
   padding-right: 15px;
-  background: transparent !important;
+  background: black !important;
   color: rgba(255, 255, 255, 0.4) !important;
   font-size: 14px;
   border-radius: 0px;

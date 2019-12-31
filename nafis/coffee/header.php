@@ -120,13 +120,11 @@ $row2 = mysqli_fetch_array($result2);
                   echo '<a class="dropdown-item" href="masuk.php">Masuk</a>';
                 }
                 ?>
-
-
               </div>
             </li>
 	        </ul>
 	      </div>
 		  </div>
-      </nav>
-            </body>
-            
+    </nav>
+  </body>
+</html>
