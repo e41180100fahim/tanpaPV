@@ -43,17 +43,21 @@ $no_of_user_products= mysqli_num_rows($user_products_result);
 						<form method="GET" action="co_pem.php">
 						  <div class="col-lg-20 ftco-animate p-md-20">
                             <div class="billing-form ftco-bg-dark p-3 p-md-5">
-                                Bukti Pembayaran
-                                <br>
-                                <br>
-                                <?php 
+							<?php 
                                 while ($kdTR=mysqli_fetch_array($trans)){
                                 $tr=$kdTR['ID_Transaksi'];
-                                $pem =  "select pembayaran.ID_Pembayaran,pembayaran.ID_Bank,pembayaran.ID_Transaksi,pembayaran.Tanggal_Pembayaran,pembayaran.Nama_Rek_Cus,pembayaran.No_Rek_Cus, transaksi.Grand_Total from pembayaran inner join 
+                                $pem =  "select pembayaran.ID_Pembayaran,pembayaran.ID_Bank,pembayaran.ID_Transaksi,pembayaran.Tanggal_Pembayaran,pembayaran.Nama_Rek_Cus,pembayaran.No_Rek_Cus,pembayaran.Status, transaksi.Grand_Total from pembayaran inner join 
                                 transaksi on transaksi.ID_Transaksi=pembayaran.ID_Transaksi where pembayaran.ID_Transaksi= '$tr'";
                                 $Qpem = mysqli_query($koneksi,$pem);
                                 while ($yeah =mysqli_fetch_array($Qpem) ){
-                                ?>
+								?>
+								
+								Bukti Pembayaran
+								<div style="margin-left:-15px" class="col-md-3">
+								<input type="text" class="form-control" disabled name="id" placeholder="" value="<?php echo $yeah['Status'] ?>" >
+								</div>
+								<br>
+								
                             <div class="row align-items-end">
                             <div class="col-md-6">
                             <div class="form-group">

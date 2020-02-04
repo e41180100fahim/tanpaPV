@@ -18,15 +18,17 @@ require_once "header.php";
 			<div class="wrap-table100">
 				<div class="table100">
 					<form action="" method="post">
-					<h6>Cari berdasarkan tanggal <input type="date" name="tanggal" data-date="" data-date-format="DD MMMM YYYY"></h6>
-					<input type="submit" value="Cari" name="cari">
-					<a class="btn btn-primary" style="background-color:crimson;" href="cetaklaporan.php">Cek Pembayaran</a>
+					<h6>Cari berdasarkan tanggal<input type="date" name="tanggal" data-date="" data-date-format="DD MMMM YYYY"></h6>
+					<input style="width: 40px;" type="submit" value="Cari" name="cari">
+					<p style="padding-bottom: 15px;"></p>
+					<a style="background-color:crimson;" class="btn btn-primary" href="cetaklaporan.php">Cetak Pembayaran</a>
 					</form>
+					<br>
 					<table>
 						<thead>
 							<tr class="table100-head">
-								<th style="width: 10%;" class="column1">ID_Transaksi</th>
-								<th style="width: 10%;" class="column2">Nama_Customer</th>
+								<th style="width: 10%;" class="column1">ID Transaksi</th>
+								<th style="width: 10%;" class="column2">Nama Customer</th>
 								<th style="width: 10%;" class="column3">Tangga Transaksi</th>
 								<th style="width: 10%;" class="column4">Tanggal Pembayaran</th>
 								<th style="width: 10%; padding-right: 100px;" class="column5">Total</th>

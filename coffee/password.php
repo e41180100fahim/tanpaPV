@@ -18,7 +18,7 @@ $row2 = mysqli_fetch_array($result2);
     <meta charset="utf-8">
     <!--  This file has been downloaded from https://bootdey.com  -->
     <!--  All snippets are MIT license https://bootdey.com/license -->
-    <title>Bootdey.com</title>
+    <title>NingPuri</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -64,7 +64,7 @@ $row2 = mysqli_fetch_array($result2);
                              }
 
                             if ($row2!="") {
-                                echo '<li class=""><a href="profiladmin.php"><span class=""></span> Profil</a></li>';    
+                                echo '<li class=""><a href="profiladmin.php"><span class=""></span> Tambah Admin</a></li>';    
                              }
                               ?>
                             
@@ -73,13 +73,13 @@ $row2 = mysqli_fetch_array($result2);
         			</nav>
                 </div>
                 <div class="content-panel">
-                    <h2 style="color: white;" class="title">Profil<span " class="pro-label label label-warning"><?php 
-                    if($row['ID_Member'] == "1"){
-                        echo 'Bronze';
-                    }else{
-                        echo 'Gold';
-                    }
-                    ?></span></h2>
+ <!--<span " class="pro-label label label-warning"><?php 
+                    // if($row['ID_Member'] == "1"){
+                    //     echo 'Bronze';
+                    // }else{
+                    //     echo 'Gold';
+                    // }
+                    ?></span>-->
                     <div class="form-horizontal">
                         <fieldset class="fieldset">
                         <?php 

@@ -1,5 +1,5 @@
 <?php
-$koneksi = mysqli_connect("localhost","root","","kopi");
+$koneksi = mysqli_connect("localhost","root","","ningpuri");
 
 // Cek Koneksi
 if (mysqli_connect_errno()){

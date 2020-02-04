@@ -6,6 +6,7 @@ $tgl=date('Y-m-d');
 // $jumlahcart = $_GET['jumlahcart'];
 // $harga = $_GET['hargacart_'];
 $grand = $_GET['totals'];
+
 //$grands += $harga * $jumlahcart;
 
 

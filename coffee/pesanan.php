@@ -28,10 +28,10 @@ require_once ('header.php');
                     <p>Simple table with project listing with progress and editing options</p>
 
                     <!-- start project list -->
-               
-                    <table class="table table-striped projects" style="background-color: black;">
+               <br>
+                    <table class="table table-striped projects" style="background-color: white;">
                       <thead>
-                        <tr>
+                        <tr style="background: black;">
                           <th style="width: 10%;">Id Pembayaran</th>
                           <th style="width: 11%;">Id Transaksi</th>
                           <th style="width: 20%;">Nama Pemesan</th>
@@ -51,7 +51,7 @@ require_once ('header.php');
 									
 								</tr>
                       <tbody>
-                        <tr>
+                        <tr style="color: black;">
                         <td><?php echo $b['ID_Pembayaran'] ?></td>
 									<td><?php echo $b['ID_Transaksi'] ?></td>
 									<td><?php echo $b['Nama'] ?> </td>

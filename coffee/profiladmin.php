@@ -19,7 +19,7 @@ $row2 = mysqli_fetch_array($result2);
     <meta charset="utf-8">
     <!--  This file has been downloaded from https://bootdey.com  -->
     <!--  All snippets are MIT license https://bootdey.com/license -->
-    <title>Bootdey.com</title>
+    <title>NingPuri</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -47,19 +47,19 @@ $row2 = mysqli_fetch_array($result2);
             		<nav class="side-menu">
         				<ul class="nav">
         					<li class=""><a href="index.php"><span class=""></span> Beranda</a></li>
-        					<li class="active"><a href="#"><span class=""></span> Profil</a></li>
+        					<li class="active"><a href="#"><span class=""></span> Tambah Admin</a></li>
         					<li><a href="password.php"><span class=""></span> Kata Sandi</a></li>
         				</ul>
         			</nav>
                 </div>
                 <div class="content-panel" style="margin-bottom: 30px;">
-                    <h2 class="title" style="color: white;">Profil<span " class="pro-label label label-warning"><?php 
-                    if($row['ID_Member'] == "1"){
-                        echo 'Bronze';
-                    }else{
-                        echo 'Gold';
-                    }
-                    ?></span></h2>
+                    <!--<h2 class="title" style="color: white;">Tambah Admin</h2> <span " class="pro-label label label-warning"><?php 
+                    // if($row['ID_Member'] == "1"){
+                    //     echo 'Bronze';
+                    // }else{
+                    //     echo 'Gold';
+                    // }
+                    ?></span>-->
                     <div class="form-horizontal">
                         <fieldset class="fieldset">
                         <?php 

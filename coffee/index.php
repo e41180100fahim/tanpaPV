@@ -29,129 +29,16 @@ require_once "header.php";
     	</div>
 	</section>
 
-  <!--Testimoni-->
-  <section class="ftco-section img" id="ftco-testimony" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="col-md-7 heading-section text-center ftco-animate">
-          <span class="subheading">Testimony</span>
-          <h2 class="mb-4">Customers Says</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-        </div>
-      </div>
-    </div>
-    <div class="container-wrap">
-      <div class="row d-flex no-gutters">
-        <div class="col-lg align-self-sm-end">
-          <div class="testimony">
-             <blockquote>
-                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small.&rdquo;</p>
-              </blockquote>
-              <div class="author d-flex mt-4">
-                <div class="image mr-3 align-self-center">
-                  <img src="images/person_1.jpg" alt="">
-                </div>
-                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-              </div>
-          </div>
-        </div>
-        <div class="col-lg align-self-sm-end">
-          <div class="testimony overlay">
-             <blockquote>
-                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>
-              </blockquote>
-              <div class="author d-flex mt-4">
-                <div class="image mr-3 align-self-center">
-                  <img src="images/person_2.jpg" alt="">
-                </div>
-                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-              </div>
-          </div>
-        </div>
-        <div class="col-lg align-self-sm-end">
-          <div class="testimony">
-             <blockquote>
-                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small  line of blind text by the name. &rdquo;</p>
-              </blockquote>
-              <div class="author d-flex mt-4">
-                <div class="image mr-3 align-self-center">
-                  <img src="images/person_3.jpg" alt="">
-                </div>
-                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-              </div>
-          </div>
-        </div>
-        <div class="col-lg align-self-sm-end">
-          <div class="testimony overlay">
-             <blockquote>
-                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however.&rdquo;</p>
-              </blockquote>
-              <div class="author d-flex mt-4">
-                <div class="image mr-3 align-self-center">
-                  <img src="images/person_2.jpg" alt="">
-                </div>
-                <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-              </div>
-          </div>
-        </div>
-        <div class="col-lg align-self-sm-end">
-          <div class="testimony">
-            <blockquote>
-              <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small  line of blind text by the name. &rdquo;</p>
-            </blockquote>
-            <div class="author d-flex mt-4">
-              <div class="image mr-3 align-self-center">
-                <img src="images/person_3.jpg" alt="">
-              </div>
-              <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+ 
 						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d830.2337225945917!2d113.70315674777164!3d-8.174582283864432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1573258788639!5m2!1sid!2sid" width="100%" height="400px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
     
-    <footer class="ftco-footer ftco-section img">
-    	<div class="overlay"></div>
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-lg-5 col-md-6 mb-5 mb-md-5">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Tentang Ning Puri</h2>
-              <p>Ning Puri berdiri sejak tahun 2017 memproduksi hasil kebun sendiri menjadi produk olahan sirup markisa yang terkenal mengandung vit. C tinggi, menyehatkan tanpa bahan pengawet, tanpa pemanis buatan, tanpa pewarna tambahan,  ekonomis dengan harga terjangkau, dan baik di konsumsi untuk semua kalangan mulai dari anak-anak, orang tua dan ibu hamil.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-		  </div>
-		  
-		  <div style="padding-left: 100px;">
-				<div class="col-lg-10 col-md-6 mb-5 mb-md-5">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Kontak Kami</h2>
-							<div class="block-23 mb-3">
-							  <ul>
-								<li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-								<li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-								<li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
-							  </ul>
-							</div>
-					</div>
-				</div>
-		  </div>
-		  
-        </div>
-      </div>
-    </footer>
+  <?php
+  require_once "footer.php";
+  ?>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>

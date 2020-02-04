@@ -12,16 +12,16 @@ $edit = mysqli_fetch_array($editt);
 						<div class="row">
 					  <div class="col-md-12 nav-link-wrap mb-5">
 						<div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-							<h1>Form Penambahan Produk</h1>
+							<!-- <h1>Edit Produk</h1> -->
 						</div>
 					  </div>
 					  <div class="col-md-12 d-flex align-items-center">
 		
-    	<div class="container">
+    	<div style="margin-top: -100px" class="container">
         	<div class="row">
 				<div class="col-lg-12 ftco-animate p-md-5">
 						<div class="billing-form ftco-bg-dark p-3 p-md-5">
-							<h3 class="mb-4 billing-heading">Tambah Barang</h3>
+							<h3 class="mb-4 billing-heading">Edit Produk</h3>
 							<?php 
                             if(isset($_GET['pesan'])){
                                 if($_GET['pesan'] == "update"){
@@ -54,7 +54,7 @@ $edit = mysqli_fetch_array($editt);
 	          		<div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="firstname">Nama Barang</label>
-					  <input type="text" class="form-control" name="nama" placeholder=""  <?php echo 'value="'.$edit['Nama_Barang'].'"' ?> >
+					  <input required type="text" class="form-control" name="nama" placeholder=""  <?php echo 'value="'.$edit['Nama_Barang'].'"' ?> >
 					  <input type="hidden" class="form-control" name="id" placeholder=""  <?php echo 'value="'.$_GET['id'].'"' ?> >
 	                </div>
 				  </div>
@@ -62,21 +62,21 @@ $edit = mysqli_fetch_array($editt);
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="towncity">Harga</label>
-	                  <input type="text" class="form-control" id="rupiah" name="harga" placeholder="" onkeypress="return hanyaAngka(event)" maxlength="14" <?php echo 'value="'.$edit['Harga'].'"' ?> >
+	                  <input required type="text" class="form-control" id="rupiah" name="harga" placeholder="" onkeypress="return hanyaAngka(event)" maxlength="14" <?php echo 'value="'.$edit['Harga'].'"' ?> >
 	                </div>
 					</div>
 		            <div class="w-100">
 	          		<div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="firstname">Deskripsi</label>
-	                  <input type="text" class="form-control" name="deskripsi" placeholder="" <?php echo 'value="'.$edit['Deskripsi'].'"' ?> >
+	                  <input required type="text" class="form-control" name="deskripsi" placeholder="" <?php echo 'value="'.$edit['Deskripsi'].'"' ?> >
 	                </div>
 				  </div>
 
 
 		            <div class="col-md-12">
 						<div class="form-group">
-						<button onclick="myFunction()" class="btn btn-primary py-3 px-4" type="submit" > Place an order</button>
+						<button onclick="myFunction()" class="btn btn-primary py-3 px-4" type="submit" > Simpan</button>
 						</div>
 					</div>
 				</div>

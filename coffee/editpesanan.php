@@ -12,16 +12,16 @@ $edit = mysqli_fetch_array($editt);
 						<div class="row">
 					  <div class="col-md-12 nav-link-wrap mb-5">
 						<div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-							<h1>Form Penambahan Produk</h1>
+							<!-- <h1>Form Penambahan Produk</h1> -->
 						</div>
 					  </div>
 					  <div class="col-md-12 d-flex align-items-center">
 		
-    	<div class="container">
+    	<div style="margin-top: -100px" class="container">
         	<div class="row">
 				<div class="col-lg-12 ftco-animate p-md-5">
 						<div class="billing-form ftco-bg-dark p-3 p-md-5">
-							<h3 class="mb-4 billing-heading">Tambah Barang</h3>
+							<h3 class="mb-4 billing-heading">Edit Pesanan</h3>
 							<?php 
                             if(isset($_GET['pesan'])){
                                 if($_GET['pesan'] == "update"){
@@ -29,59 +29,60 @@ $edit = mysqli_fetch_array($editt);
                                 }
                             }
                         ?>
-							<form action="updatepesanan.php" method="post">
+						
 							<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 								
 
                 <div class="row align-items-end">
-                </div>
+				</div>
+				<form action="updatepesanan.php" method="post">
 	          	<div class="row align-items-end">
 	          		<div class="col-md-6">
 	                <div class="form-group">
-	                	<label for="firstname">Nama Barang</label>
-					  <input type="text" class="form-control" name="id" placeholder=""  <?php echo 'value="'.$_GET['id'].'"' ?> >
+	                	<label for="firstname">ID Pembayaran</label>
+					  <input style="color: white;" disabled type="text" class="form-control" name="id" placeholder=""  <?php echo 'value="'.$_GET['id'].'"' ?> >
 	                </div>
 				  </div>
 				  <div class="w-100"></div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
-	                	<label for="firstname">Nama Barang</label>
-					  <input type="text" class="form-control" name="idtrans" placeholder=""  <?php echo 'value="'.$edit['ID_Transaksi'].'"' ?> >
+	                	<label for="firstname">ID Transaksi</label>
+					  <input disabled type="text" class="form-control" name="idtrans" placeholder=""  <?php echo 'value="'.$edit['ID_Transaksi'].'"' ?> >
 	                </div>
 					</div>
 		            <div class="w-100"></div>
 	          		<div class="col-md-6">
 	                <div class="form-group">
-	                	<label for="firstname">Deskripsi</label>
-	                  <input type="text" class="form-control" name="nama" placeholder="" <?php echo 'value="'.$edit['Nama'].'"' ?> >
+	                	<label for="firstname">Nama</label>
+	                  <input disabled type="text" class="form-control" name="nama" placeholder="" <?php echo 'value="'.$edit['Nama'].'"' ?> >
 	                </div>
 				  </div>
 				  <div class="w-100"></div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
-	                	<label for="firstname">Nama Barang</label>
-					  <input type="text" class="form-control" name="alamat" placeholder=""  <?php echo 'value="'.$edit['Alamat'].'"' ?> >
+	                	<label for="firstname">Alamat</label>
+					  <input disabled type="text" class="form-control" name="alamat" placeholder=""  <?php echo 'value="'.$edit['Alamat'].'"' ?> >
 	                </div>
 					</div>
 					<div class="w-100"></div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
-	                	<label for="firstname">Nama Barang</label>
-					  <input type="text" class="form-control" name="no_rek" placeholder=""  <?php echo 'value="'.$edit['No_Rek'].'"' ?> >
+	                	<label for="firstname">No. Rekening</label>
+					  <input disabled type="text" class="form-control" name="no_rek" placeholder=""  <?php echo 'value="'.$edit['No_Rek'].'"' ?> >
 	                </div>
 					</div>
 					<div class="w-100"></div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
-	                	<label for="firstname">Nama Barang</label>
-					  <input type="text" class="form-control" name="nama" placeholder=""  <?php echo 'value="'.$edit['Tanggal_Pembayaran'].'"' ?> >
+	                	<label for="firstname">Tanggal Pembayaran</label>
+					  <input disabled type="text" class="form-control" name="nama" placeholder=""  <?php echo 'value="'.$edit['Tanggal_Pembayaran'].'"' ?> >
 	                </div>
 					</div>
 				  <div class="w-100"></div>
 				  <div class="col-md-6">
 		            	<div class="form-group">
-				  <label>Transfer Bank</label>
-                                  <select class="form-control" name="status" id="" >
+				  <label>Status</label>
+                                  <select class="form-control" name="status" id="status" >
 								  <option style="color: black;" value="Menunggu">Menunggu </option>
 								  <option style="color: black;" value="Sukses"> Sukses </option>
                                   </select>
@@ -89,11 +90,12 @@ $edit = mysqli_fetch_array($editt);
 						</div>
 		            <div class="col-md-12">
 						<div class="form-group">
-						<button onclick="myFunction()" class="btn btn-primary py-3 px-4" type="submit" > Place an order</button>
+						<button onclick="myFunction()" class="btn btn-primary py-3 px-4" type="submit" > Simpan</button>
 						</div>
 					</div>
+					</form>
 				</div>
-				</form>
+				
 			</div><!-- END -->
           </div> <!-- .col-md-8 -->
         </section> <!-- .section -->
